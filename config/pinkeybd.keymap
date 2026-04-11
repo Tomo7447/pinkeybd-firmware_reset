@@ -58,7 +58,67 @@
         middle_click {
             bindings = <&mkp MCLK>;
             key-positions = <38 40>;
-            layers = <5 1>;
+            layers = <1 0>;
+        };
+
+        left_kakko {
+            bindings = <&kp LS(N8)>;
+            key-positions = <2 3>;
+            layers = <0 2>;
+        };
+
+        right_kakko {
+            bindings = <&kp LS(N9)>;
+            key-positions = <3 4>;
+            layers = <0 1>;
+        };
+
+        left_kagi {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <13 14>;
+            layers = <0 1>;
+        };
+
+        right_kagi {
+            bindings = <&kp NUHS>;
+            key-positions = <14 15>;
+            layers = <0 1>;
+        };
+
+        syounari {
+            bindings = <&kp LS(COMMA)>;
+            key-positions = <24 25>;
+            layers = <0 1>;
+        };
+
+        dainari {
+            bindings = <&kp LS(PERIOD)>;
+            key-positions = <25 26>;
+            layers = <0 1>;
+        };
+
+        left_boot {
+            bindings = <&bootloader>;
+            key-positions = <2 3 4 5>;
+            layers = <0>;
+        };
+
+        right_boot {
+            bindings = <&bootloader>;
+            key-positions = <7 8 9 10>;
+            layers = <0>;
+        };
+
+        BT_CLR_ALL {
+            bindings = <&mo 5>;
+            key-positions = <26 27>;
+            layers = <2>;
+        };
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <18 20>;
+            layers = <0 1>;
         };
     };
 
@@ -89,11 +149,13 @@
 
         Default_layer {
             bindings = <
-&kp Q      &kp W  &kp E                 &kp R  &kp T                                &mt LS(LG(S)) LG(PERIOD)  &kp Y      &kp U      &kp I         &kp O   &kp P
-&kp A      &kp S  &kp D                 &kp F  &kp G                                &none                     &kp H      &kp J      &kp K         &kp L   &kp N0
-&kp Z      &kp X  &kp C                 &kp V  &kp B                                &mt F10 F7                &kp N      &kp M      &kp N0        &kp N0  &kp N0
+&kp Q      &kp W  &kp E                 &kp R  &kp T                                &mt LS(LG(S)) LG(PERIOD)  &kp Y      &kp U      &kp I            &kp O                &kp P
+&kp A      &kp S  &kp D                 &kp F  &kp G                                &none                     &kp H      &kp J      &kp K            &kp L                &minus_single
+&kp Z      &kp X  &kp C                 &kp V  &kp B                                &mt F10 F7                &kp N      &kp M      &comma_question  &period_exclamation  &slash_double
 &kp LCTRL  &mo 2  &mt LEFT_SHIFT SPACE  &mo 1  &mt INTERNATIONAL_5 INTERNATIONAL_4  &mkp LCLK                 &kp ENTER  &mkp RCLK  &kp LEFT_ALT
             >;
+
+            sensor-bindings = <&inc_dec_kp DOWN UP_ARROW>;
         };
 
         symbol_and_number {
@@ -103,15 +165,19 @@
 &none  &none             &none             &none             &none                    &none      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3       &kp PERIOD     &kp SLASH
 &none  &none             &kp SPACE         &none             &none                    &mkp LCLK  &kp ENTER     &mkp RCLK     &kp DOUBLE_QUOTES
             >;
+
+            sensor-bindings = <&inc_dec_kp PAGE_DOWN PG_UP>;
         };
 
         arrow_layer {
             bindings = <
 &kp K_MUTE       &none  &kp ESC  &none      &kp TAB  &none          &kp HOME  &none        &kp UP_ARROW    &none      &none
 &kp C_VOL_DN     &none  &kp DEL  &none      &none    &none          &kp END   &kp LEFT     &kp DOWN_ARROW  &kp RIGHT  &none
-&kp C_VOLUME_UP  &none  &none    &kp LG(V)  &mo 5    &none          &none     &none        &none           &none      &none
+&kp C_VOLUME_UP  &none  &none    &kp LG(V)  &none    &none          &none     &none        &none           &none      &none
 &kp LG(H)        &none  &none    &none      &none    &kp PAGE_DOWN  &none     &kp PAGE_UP  &none
             >;
+
+            sensor-bindings = <&inc_dec_kp K_SCROLL_DOWN K_SCROLL_UP>;
         };
 
         Yamato_hairetu {
@@ -121,6 +187,8 @@
 &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp TAB     &kp APOS    &kp EQUAL   &kp BSLH    &kp GRAVE   &kp INS
 &mo 0       &mo 0       &kp SPACE   &kp LSHIFT  &kp F11     &kp RSHIFT  &kp ENTER   &none       &kp RSHIFT
             >;
+
+            sensor-bindings = <&inc_dec_kp 0 0>;
         };
 
         not_in_use {
